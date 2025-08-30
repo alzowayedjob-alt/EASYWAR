@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+:root{ --chat-font-size: 10px; }
+
+*{ box-sizing: border-box }
+html, body{ height: 100%; }
+body{ color:#f4f7ff; font-family:"Cairo", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+.chat-shell{
+  max-width: 880px;
+  margin-inline: auto;
+  border: 1px solid #243b6b;
+  border-radius: 16px;
+  background: rgba(15,31,77,.8);
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+  display:flex;
+  flex-direction:column;
+  min-height: calc(100vh - 80px);
+}
+
+.chat-scroll{
+  height: calc(100vh - 260px);
+  overflow: auto;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.messages{ display:flex; flex-direction:column; gap:10px; }
+
+.row-msg{ display:flex; }
+.row-msg.user{ justify-content:flex-end; }
+.row-msg.assistant{ justify-content:flex-start; }
+
+.bubble{
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  line-height: 1.9;
+  font-size: calc(var(--chat-font-size) + 6px);
+  background: #0f1f4d;
+  border: 1px solid #243b6b;
+}
+.row-msg.user .bubble{
+  background: #12306e;
+  border-color: #2a4a8a;
+}
+
+.empty-state{
+  opacity:.7;
+  text-align:center;
+  padding: 32px 12px;
+}
+
+.jump-down{
+  position: sticky;
+  left: 100%;
+  transform: translateX(-56px);
+  bottom: 12px;
+  margin-top: -36px;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display:flex;
+  align-items:center; justify-content:center;
+  background: #0f1f4d;
+  border: 1px solid #243b6b;
+}
+
+.composer{
+  display:flex;
+  gap: 10px;
+  padding: 12px;
+  border-top: 1px solid #243b6b;
+  background: #0b1633;
+}
+
+.btn-soft{
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #0f1f4d;
+  border: 1px solid #243b6b;
+  color: #9db1ff;
+  font-weight: 600;
+}
+
+.chat-input{
+  width: 100%;
+  resize: none;
+  outline: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #243b6b;
+  background: #0f1f4d;
+  color: #f4f7ff;
+}
+
+/* Sidebar (if used) */
+.sidebar-header{
+  display:flex; align-items:center; gap:10px;
+  padding:12px 16px;
+  border-bottom:1px solid #243b6b;
+}
+.sidebar-user-stick{
+  position:sticky; bottom:0; padding:12px 16px;
+  background:#0f1f4d;
+  border-top:1px solid #243b6b;
+}
